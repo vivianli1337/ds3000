@@ -1,0 +1,21 @@
+FILE FORMATS
+
+stations.csv
+- Station ID (Int)
+- WBAN ID (Int)
+- GPS Latitude (Decimal)
+- GPS Longitude (Decimal)
+
+yyyy.csv (yyyy = year)
+- StationID (Int)
+- WBANID (Int)
+- Month (Int)
+- Day (Int)
+- Temperature / degrees F (Decimal)
+
+Stations are identified by the combination of their Station ID and WBAN ID.
+Either of these IDs might be NULL.  You can ignore the WBAN, but be sure to
+remove any duplicate temperature readings.
+
+Also ignore any station with a missing ID or GPS location.
+(Latitude/Longitude values will be +00.000.)
