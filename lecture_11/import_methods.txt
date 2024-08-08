@@ -1,0 +1,39 @@
+Method 1: Using .import and the sqlite3 command-line client (IRIS)
+
+sqlite3
+
+.mode csv
+
+create table iris (
+   sepal_length float,
+   sepal_width float,
+   petal_length float,
+   petal_width float,
+   species string
+);
+
+.import iris.csv iris
+
+.tables
+
+select * from iris;
+
+.save iris.db
+
+.quit
+
+
+Method 2: Using csvkit (HuRI)
+
+conda install csvkit
+csvsql --help
+csvsql --db sqlite:///ppi.db --insert HuRI.tsv --tabs --tables ppi --no-header-row
+-- creates table with columns "a" and "b"
+
+
+Method 3: Push from a pandas dataframe into the database (VSX)
+database_push.ipynb
+
+
+
+
